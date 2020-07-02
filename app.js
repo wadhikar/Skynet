@@ -21,8 +21,7 @@ var groupsRouter = require('./routes/groups');
 
 var app = express();
 
-//var url = process.env.DATABASEURL || "mongodb://localhost/skynetLocalDB";
-var url = process.env.DATABASEURL || "mongodb+srv://damoon:Summer2020@skynet-ac44p.azure.mongodb.net/test?retryWrites=true&w=majority";
+var url = process.env.DATABASEURL || "mongodb://localhost/skynetLocalDB";
 
 //mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true});
 
