@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+<!--@TODO: upload multiple files to the server, maybe inside the /public/images directory
+          to be used as slides-->
+<div style="width: 30%; margin: 25px auto;">
+    <h1>Create a Lecture</h1>
+    <form action="/lectures/new" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>name:
+                <input class="form-control" type="text" name="name" placeholder="name">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>Image file:
+                <input class="form-control" type="file" name="background_file"  onchange='openFile(event)' >
+            </label>
+            <img id='output' style="max-width : 300px;">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    var openFile = function(event) {
+        var input = event.target;
+
+        var reader = new FileReader();
+        reader.onload = function(){
+            var dataURL = reader.result;
+            var output = document.getElementById('output');
+            output.src = dataURL;
+        };
+        reader.readAsDataURL(input.files[0]);
+    };
+</script>
+
+<% include ../partials/footer %>

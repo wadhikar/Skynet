@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>List of all groups</h1>
+            <p>
+                <a class="btn btn-primary btn-large" href="/groups/new">Create A New Group</a>
+            </p>
+        </div>
+    </header>
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% groups.forEach(function (group) { %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h4><%= group.name %></h4>
+                    </div>
+                    <p>
+                        <a href="/groups/<%= group._id %>" class="btn btn-primary">Open <%= group.name%> group</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

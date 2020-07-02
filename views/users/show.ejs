@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <p class="lead"><%= user.username%>'s profile</p>
+            <a type="button" class="btn btn-warning btn-lg btn-block" href="/users/<%= user._id
+            %>/edit?_method=PUT">Edit</a><br/>
+            <form id="delete-form" action="/users/<%= user._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger btn-block">Delete</button>
+            </form>
+        </div>
+
+        <div class="col-md-10" id="drawingColumn">
+            <div class="row text-center" style="display:flex; flex-wrap: wrap; ">
+                <% lectures.forEach(function(lecture){ %>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="thumbnail">
+                            <img src="data:image;base64,<%= lecture.background_file %>" alt="<%= lecture.name %> "
+                                 style="max-height: 150px;">
+                            <div class="caption">
+                                <h4><%= lecture.name %></h4>
+                            </div>
+                            <p>
+                                <a href="/lectures/<%= lecture._id %>" class="btn btn-primary">Attend <%= lecture.name%> lecture</a>
+                            </p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,7 @@
+#drawing {
+    position: relative;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    overflow: auto;
+}

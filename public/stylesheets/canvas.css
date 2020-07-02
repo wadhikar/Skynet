@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+#blackboardPlaceholder {
+    height: auto;
+    cursor:crosshair;
+}
+#background_file{
+    display: none;
+}
+
+#lineHistory{
+    display: none;
+}
+
+#drawingCanvas {
+    position: absolute;
+    border:1px solid red;
+    overflow: scroll;
+    height:auto;
+}
+#tempCanvas {
+    position: absolute;
+    border:1px solid red;
+    height: auto;
+}
+.noscript {
+    padding:50px 30px 0 40px;
+    width:820px;
+}
+#selector {
+    margin-top:-30px;
+}
+select {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+    background-color:#EAEAEA;
+}

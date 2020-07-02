@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>List of all users</h1>
+        </div>
+    </header>
+    <div class="row text-center" style="display:flex; flex-wrap: wrap; ">
+        <% users.forEach(function(user){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h4><%= user.username %></h4>
+                    </div>
+                    <p>
+                        <a href="/users/<%= user._id %>" class="btn btn-primary">View <%= user.username%>'s lectures</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

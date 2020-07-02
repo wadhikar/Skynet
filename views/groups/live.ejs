@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+
+<div class="row" style="height: 100%;" >
+    <div class="col-md-9" id="drawingContainer" style="height: 80vh; overflow: auto;">
+        <canvas id="drawing" style="border: darkred solid 1px; overflow: auto;"></canvas>
+    </div>
+    <div class="col-md-3" >
+<!--        <button class="btn btn-lg btn-warning" onclick="clearit()">Clear drawings</button>-->
+        <a class="btn btn-md btn-warning" href="/groups/<%= group._id %>/live">To clear doodle and chat refresh
+            the
+            page</a>
+        <% if(loggedinUser){ %>
+            <h1 class="lead">Anonymous Chat</h1>
+            <form id ="message-form" action="#" method="get">
+                <input id="message" autocomplete="off" />
+                <button class="btn btn-md btn-primary ">Send</button>
+            </form>
+            <ul id="message-list" style="height: 100%; overflow: scroll"></ul>
+        <% }%>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+<script type="text/javascript" src="/javascripts/chat-client.js"></script>
+<script type="text/javascript" src="/javascripts/draw-client.js"></script>
+
+
+<% include ../partials/footer %>
